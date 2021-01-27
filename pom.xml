@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.5.RELEASE</version>
+        <version>2.1.13.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -103,6 +103,19 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
         <resources>
             <resource>
@@ -124,5 +137,19 @@
             <email>flanliulf@gmail.com</email>
         </developer>
     </developers>
+
+    <!-- 发布jar到nexus -->
+    <distributionManagement>
+        <repository>
+            <id>gyenno-releases</id>
+            <name>Gyenno Nexus Release</name>
+            <url>http://nexus.gyenno.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>gyenno-snapshots</id>
+            <name>Gyenno Nexus Snapshot</name>
+            <url>http://nexus.gyenno.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
