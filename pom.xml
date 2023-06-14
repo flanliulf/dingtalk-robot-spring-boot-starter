@@ -24,7 +24,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <fastjson.version>1.2.61</fastjson.version>
-        <hutool.version>5.0.7</hutool.version>
+        <hutool.version>5.8.19</hutool.version>
     </properties>
 
     <dependencies>
